@@ -20,6 +20,41 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/images/favicon.png">
 
+  <style>
+    .container {
+      margin-bottom: 50px;
+    }
+
+    .content {
+      width: 3vw;
+      display: inline-block;
+      margin-bottom: 0;
+      border-top: 1px solid #d4d4d4;
+      border-left: 1px solid #d4d4d4;
+    }
+    .lastColumn {
+      border-right: 1px solid #d4d4d4;
+    }
+    .lastRow .content {
+      border-bottom: 1px solid #d4d4d4;
+    }
+    .rowi {
+      font-size: 0;
+      display: flex;
+      justify-content: center;
+    }
+    .colored {
+      background-color: black;
+    }
+    .center {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3vw;
+    }
+
+
+  </style>
+
 </head>
 <body>
   <!-- Navigation -->
@@ -40,11 +75,15 @@
   
   <!-- Primary Page Layout -->
   <div id="container" class="container" style="margin-top: 75px;">
+    <div class="center"><button id="clearBtn">Clear & Setup new board</button></div>
+    
+
     
   </div>
 
 
   <!-- End of document -->
   <script src="/javascript/navbar.js"></script> 
+  <script src="/javascript/Etch-a-Sketch.js"></script> 
 </body>
 </html>
