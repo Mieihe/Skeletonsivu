@@ -1,0 +1,98 @@
+#navbar {
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.35);
+  background-color: rgba(85, 85, 85, 0.95);
+  line-height: 0;
+
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 999;
+
+  transition: 1s;
+
+  margin-top: -208px;
+}
+
+.navContainer {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.logo {
+  margin: 9px;
+  display: none;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  float: none;
+}
+
+.nav li {
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: 0.3s background-color;
+}
+
+.nav a:hover {
+  background-color: #00bcd4;
+}
+
+.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}
+#menuBrgr {
+  margin: 9px;
+  line-height: 0;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  right: 0;
+  transition: 1s;
+  z-index: 999;
+}
+
+@media screen and (min-width: 660px) {
+  .nav li {
+    width: 120px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+  }
+
+  .nav li {
+    display: inline-block;
+    margin-right: -4px;
+    margin-bottom: 0;
+  }
+  .nav ul {
+    float: right;
+  }
+  .logo {
+    display: inline-block;
+  }
+  #navbar {
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 999;
+    margin-top: 0px;
+  }
+  #menuBrgr {
+    display: none;
+  }
+}
