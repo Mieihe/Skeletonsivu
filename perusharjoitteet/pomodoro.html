@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro kello</title>
+
+  <!-- Basic Page Needs -->
+  <meta name="description" content="">
+  <meta name="author" content="Toomas Selkänen">
+
+  <!-- FONT -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600,800" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/pomodoro.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+</head>
+<body>
+  <!-- Navigation -->
+  <div id="navbar" class="nav">
+    <div class="navContainer">
+      <img class="logo" src="/images/favicon.png">
+      <ul id="navUl">
+        <li><a href="/index.html">Etusivu</a></li>
+        <li><a href="/tutorials.html">Tutorials</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/test.html">Test</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <a id="menuBrgr" href="#"><img src="/images/menuBrgr.svg" width="32px"></a>
+
+  
+  <!-- Primary Page Layout -->
+  <div id="container" class="container" style="margin-top: 75px;">
+    <div class="row">
+      <div class="column">
+        <div id="tomato">
+          <div class="screen"><span id="time"></span></div>
+          <div class="iconrow">
+            <a id="start" class="playIcon" href="#"><svg id="butn" class="paper" width="60" height="60" viewBox="0 0 317.235 317.235">
+              <g id="g4" transform="translate(22)">
+                <path d="M295.84,146.049l-256-144c-4.96-2.784-11.008-2.72-15.904,0.128C19.008,5.057,16,10.305,16,16.001v288
+	c0,5.696,3.008,10.944,7.936,13.824c2.496,1.44,5.28,2.176,8.064,2.176c2.688,0,5.408-0.672,7.84-2.048l256-144
+	c5.024-2.848,8.16-8.16,8.16-13.952S300.864,148.897,295.84,146.049z"/>
+              </g>
+              
+            </svg></a>
+            <a id="pause" class="playIcon" href="#"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="60" height="60">
+           <g>
+             <g>
+               <path d="M181.333,0H74.667c-17.643,0-32,14.357-32,32v448c0,17.643,14.357,32,32,32h106.667c17.643,0,32-14.357,32-32V32
+                 C213.333,14.357,198.976,0,181.333,0z"/>
+             </g>
+           </g>
+           <g>
+             <g>
+               <path d="M437.333,0H330.667c-17.643,0-32,14.357-32,32v448c0,17.643,14.357,32,32,32h106.667c17.643,0,32-14.357,32-32V32
+                 C469.333,14.357,454.976,0,437.333,0z"/>
+             </g>
+           </g>
+           
+            </svg></a>
+            <a id="stop" class="playIcon" href="#"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 493.56 493.56" style="enable-background:new 0 0 493.56 493.56;" xml:space="preserve" width="60" height="60">
+              
+           <g>
+             <g>
+               <path d="M438.254,0H58.974C27.502,0,0.006,25.992,0.006,57.472v379.256c0,31.48,27.496,56.832,58.968,56.832h379.28
+                 c31.468,0,55.3-25.352,55.3-56.832V57.472C493.554,25.992,469.722,0,438.254,0z"/>
+             </g>
+           </g>
+            </svg></a>
+            <a id="refresh" class="playIcon" href="#"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 511.991 511.991" style="enable-background:new 0 0 511.991 511.991;" xml:space="preserve" width="60" height="60">
+           <g>
+             <g>
+               <g>
+                 <path d="M465.45,279.263c-12.87,0-23.273,10.426-23.273,23.273c0,38.493-31.325,69.818-69.818,69.818H186.177v-69.818
+                   c0-8.937-5.143-17.105-13.172-20.969c-8.122-3.863-17.641-2.793-24.646,2.793L31.995,377.451
+                   c-5.516,4.422-8.727,11.101-8.727,18.176c0,7.075,3.212,13.754,8.727,18.176l116.364,93.091
+                   c4.212,3.351,9.356,5.097,14.545,5.097c3.421,0,6.889-0.768,10.1-2.304c8.029-3.863,13.172-12.032,13.172-20.969V418.9h186.182
+                   c64.163,0,116.364-52.201,116.364-116.364C488.723,289.689,478.32,279.263,465.45,279.263z"/>
+                 <path d="M46.541,232.718c12.87,0,23.273-10.426,23.273-23.273c0-38.493,31.325-69.818,69.818-69.818h186.182v69.818
+                   c0,8.937,5.143,17.105,13.172,20.969c3.235,1.536,6.679,2.304,10.1,2.304c5.19,0,10.333-1.745,14.545-5.097l116.364-93.091
+                   c5.516-4.422,8.727-11.101,8.727-18.176s-3.212-13.754-8.727-18.176L363.632,5.087c-6.982-5.585-16.617-6.656-24.646-2.793
+                   s-13.172,12.032-13.172,20.969v69.818H139.632c-64.163,0-116.364,52.201-116.364,116.364
+                   C23.268,222.292,33.671,232.718,46.541,232.718z"/>
+               </g>
+             </g>
+           </g>
+            </svg></a>
+          </div>
+          <div class="subtitle minutes">MINUTES</div>
+          <a id="minutesBack" class="playIcon" href="#"><svg id="butn" class="paper" width="30" height="30" viewBox="0 0 317.235 317.235">
+              <path
+              id="path2"
+              d="m 24.16,146.049 256,-144 c 4.96,-2.784 11.008,-2.72 15.904,0.128 4.928,2.88 7.936,8.128 7.936,13.824 v 288 c 0,5.696 -3.008,10.944 -7.936,13.824 -2.496,1.44 -5.28,2.176 -8.064,2.176 -2.688,0 -5.408,-0.672 -7.84,-2.048 l -256,-144 C 19.136,171.105 16,165.793 16,160.001 c 0,-5.792 3.136,-11.104 8.16,-13.952 z" />
+          </svg></a>
+          <div class="screen mini first">25</div>
+          <a id="minutesForward" class="playIcon" href="#"><svg id="butn" class="paper" width="30" height="30" viewBox="0 0 317.235 317.235">
+              <path d="M295.84,146.049l-256-144c-4.96-2.784-11.008-2.72-15.904,0.128C19.008,5.057,16,10.305,16,16.001v288c0,5.696,3.008,10.944,7.936,13.824c2.496,1.44,5.28,2.176,8.064,2.176c2.688,0,5.408-0.672,7.84-2.048l256-144c5.024-2.848,8.16-8.16,8.16-13.952S300.864,148.897,295.84,146.049z"/> 
+          </svg></a>
+
+          <a id="breakBack" class="playIcon" href="#"><svg id="butn" class="paper" width="30" height="30" viewBox="0 0 317.235 317.235">
+            <path
+            id="path2"
+            d="m 24.16,146.049 256,-144 c 4.96,-2.784 11.008,-2.72 15.904,0.128 4.928,2.88 7.936,8.128 7.936,13.824 v 288 c 0,5.696 -3.008,10.944 -7.936,13.824 -2.496,1.44 -5.28,2.176 -8.064,2.176 -2.688,0 -5.408,-0.672 -7.84,-2.048 l -256,-144 C 19.136,171.105 16,165.793 16,160.001 c 0,-5.792 3.136,-11.104 8.16,-13.952 z" />
+        </svg></a>
+          <div class="subtitle break">BREAK</div>
+          <div class="screen mini second">5</div>
+          <a id="breakForward" class="playIcon" href="#"><svg id="butn" class="paper" width="30" height="30" viewBox="0 0 317.235 317.235">
+            <path d="M295.84,146.049l-256-144c-4.96-2.784-11.008-2.72-15.904,0.128C19.008,5.057,16,10.305,16,16.001v288c0,5.696,3.008,10.944,7.936,13.824c2.496,1.44,5.28,2.176,8.064,2.176c2.688,0,5.408-0.672,7.84-2.048l256-144c5.024-2.848,8.16-8.16,8.16-13.952S300.864,148.897,295.84,146.049z"/> 
+        </svg></a>
+ 
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <!-- End of document -->
+  <script src="/javascript/navbar.js"></script> 
+  <script src="/javascript/pomodoro.js"></script> 
+</body>
+</html>

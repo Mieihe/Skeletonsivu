@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Cardio 💪</title>
+
+  <!-- Basic Page Needs -->
+  <meta name="description" content="">
+  <meta name="author" content="Toomas Selkänen">
+
+  <!-- FONT -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+</head>
+<body>
+  <!-- Navigation -->
+  <div id="navbar" class="nav">
+    <div class="navContainer">
+      <img class="logo" src="/images/favicon.png">
+      <ul id="navUl">
+        <li><a href="/index.html">Etusivu</a></li>
+        <li><a href="/tutorials.html">Tutorials</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/test.html">Test</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <a id="menuBrgr" href="#"><img src="/images/menuBrgr.svg" width="32px"></a>
+
+  
+  <!-- Primary Page Layout -->
+  <div id="container" class="container" style="margin-top: 75px;">
+    <br>
+    <p align="center"><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+
+  </div>
+
+
+  <!-- End of document -->
+  <script src="/javascript/navbar.js"></script> 
+  <script>
+    // Get your shorts on - this is an array workout!
+    // ## Array Cardio Day 1
+
+    // Some data we can work with
+
+    const inventors = [
+      { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
+      { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
+      { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
+      { first: 'Marie', last: 'Curie', year: 1867, passed: 1934 },
+      { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
+      { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
+      { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
+      { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 },
+      { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 },
+      { first: 'Sarah E.', last: 'Goode', year: 1855, passed: 1905 },
+      { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
+      { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
+    ];
+
+    const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry', 'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul', 'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David', 'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana', 'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric', 'Bergman, Ingmar', 'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric', 'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell', 'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine', 'Black, Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William'];
+
+
+    // Array.prototype.filter()
+    // 1. Filter the list of inventors for those who were born in the 1500's
+    function check16thCentury(item) {
+      if (item.year >= 1500 && item.year < 1600) {
+       return true;
+      }
+      return false;
+    }
+    let inventorsBorn = inventors.filter(check16thCentury);
+    console.log(inventorsBorn);
+
+
+    // Array.prototype.map()
+    // 2. Give us an array of the inventors first and last names
+    function getFnames(item) {
+      return [item.first,item.last].join(" ");
+    }
+    let fnames = inventors.map(getFnames);
+    console.log(fnames);
+
+
+    // Array.prototype.sort()
+    // 3. Sort the inventors by birthdate, oldest to youngest
+    let sortedInventors = inventors.sort(function (a, b) {
+      return a.year - b.year;
+    });
+    console.table(sortedInventors);
+    
+
+    // Array.prototype.reduce()
+    // 4. How many years did all the inventors live all together?
+    let initialValue = 0;
+    let yearsBorn = inventors.reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue.year
+    }, initialValue);
+    let yearsPassed = inventors.reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue.passed
+    }, initialValue);
+    console.log(yearsPassed-yearsBorn);
+
+
+    // 5. Sort the inventors by years lived
+    inventors.forEach(function(item){
+      item.lived = item.passed - item.year;
+    });
+    let sortedByLived = inventors.sort(function (a, b) {
+      return b.lived - a.lived;
+    });
+    console.log(sortedByLived);
+
+
+    // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
+    // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+    let boulevards = ["Boulevard Auguste-Blanqui", "Boulevard Barbès", "Boulevard Beaumarchais", "Boulevard de l'Amiral-Bruix", "Boulevard Mortier", "Boulevard Poniatowski", "Boulevard Soult", "Boulevard des Capucines", "Boulevard de la Chapelle", "Boulevard de Clichy", "Boulevard du Crime", "Boulevard du Général-d'Armée-Jean-Simon", "Boulevard Haussmann", "Boulevard de l'Hôpital", "Boulevard des Italiens", "Boulevard Lefebvre", "Boulevard de la Madeleine", "Boulevard de Magenta", "Boulevard Marguerite-de-Rochechouart", "Boulevard Montmartre", "Boulevard du Montparnasse", "Boulevard Raspail", "Boulevard Richard-Lenoir", "Boulevard Saint-Germain", "Boulevard Saint-Michel", "Boulevard de Sébastopol", "Boulevard de Strasbourg", "Boulevard du Temple", "Boulevard Voltaire", "Boulevard de la Zone"
+    ];
+    function checkDe(item) {
+      return item.includes(" de ");
+    }
+    let deBoulevards = boulevards.filter(checkDe);
+    console.log(deBoulevards);
+
+
+    // 7. sort Exercise
+    // Sort the people alphabetically by last name
+    console.log(people.sort());
+
+
+    // 8. Reduce Exercise
+    // Sum up the instances of each of these
+    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+    let countedVehicles = data.reduce(function (allVehicles, vehicle) {
+      if (vehicle in allVehicles) {
+        allVehicles[vehicle]++
+      } else {
+        allVehicles[vehicle] = 1
+      }
+      return allVehicles;
+    }, {} );
+    console.log(countedVehicles);
+
+
+
+
+    // ## Array Cardio Day 2
+
+    const people2 = [
+      { name: 'Wes', year: 1988 },
+      { name: 'Kait', year: 1986 },
+      { name: 'Irv', year: 1970 },
+      { name: 'Lux', year: 2015 }
+    ];
+
+    const comments = [
+      { text: 'Love this!', id: 523423 },
+      { text: 'Super good', id: 823423 },
+      { text: 'You are the best', id: 2039842 },
+      { text: 'Ramen is my fav food ever', id: 123523 },
+      { text: 'Nice Nice Nice!', id: 542328 }
+    ];
+
+
+
+    // Some and Every Checks
+    // Array.prototype.some() // is at least one person 19 or older?
+    let currentYear = 2020;
+    function checkAge(item) {
+      if (currentYear - item.year > 18) return true;
+    }
+    console.log(people2.some(checkAge));
+
+    // Array.prototype.every() // is everyone 19 or older?
+    function checkAge(item) {
+      if (currentYear - item.year > 18) return true;
+    }
+    console.log(people2.every(checkAge));
+
+    // Array.prototype.find()
+    // Find is like filter, but instead returns just the one you are looking for
+    // find the comment with the ID of 823423
+    let idToSearch = 823423;
+    function findId(item) {
+      if (item.id == idToSearch) return true;
+    }
+    let foundComment = comments.find(findId);
+    console.log(foundComment);
+
+
+    // Array.prototype.findIndex()
+    // Find the comment with this ID
+    // delete the comment with the ID of 823423
+    let commentToDelete = comments.findIndex(findId);
+    delete comments[commentToDelete];
+    console.table(comments);
+
+  </script>
+</body>
+</html>

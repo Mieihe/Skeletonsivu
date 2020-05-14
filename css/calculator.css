@@ -1,0 +1,66 @@
+.calculator {
+  width: 300px;
+  height: 400px;
+  background-color: rgb(126, 171, 212);
+  background-image: linear-gradient(-60deg, rgb(126, 171, 212), rgb(162, 210, 255));
+  border-radius: 20px;
+  margin: auto;
+  -webkit-box-shadow: 10px 10px 17px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 17px -6px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 17px -6px rgba(0,0,0,0.75);
+}
+.screenx { 
+  background-color: rgb(207, 195, 147);
+  width: 86%;
+  height: 16%;
+  margin: auto;
+  -webkit-box-shadow: inset 3px 3px 14px -4px rgba(0,0,0,0.81);
+  -moz-box-shadow: inset 3px 3px 14px -4px rgba(0,0,0,0.81);
+  box-shadow: inset 3px 3px 14px -4px rgba(0,0,0,0.81);
+  line-height: 65px;
+  font-size: 40px;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.65);
+  font-family: 'Orbitron', sans-serif;
+  text-align: right;
+  overflow: hidden;
+  padding-right: 10px;
+}
+.screen {
+  float:right;
+}
+.btnRow {
+  width: 90%;
+  height: 13.7%;
+  margin: auto;
+  display: flex;
+
+}
+.btn {
+  background-color: cornsilk;
+  width: 20.5%;
+  height: 80%;
+  display: inline-block;
+  margin: 6px;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 14px -7px rgba(0,0,0,0.81);
+  -moz-box-shadow: 3px 3px 14px -7px rgba(0,0,0,0.81);
+  box-shadow: 3px 3px 14px -7px rgba(0,0,0,0.81);
+  text-align: center;
+  vertical-align: middle;
+  line-height: 45px;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+
+.btn:active {
+  background-color: rgb(255, 251, 233);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.btn.dbl {
+  width: 45%;
+}
