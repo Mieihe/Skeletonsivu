@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Testi</title>
+  <title>Ristinolla</title>
 
   <!-- Basic Page Needs -->
   <meta name="description" content="">
@@ -16,17 +16,17 @@
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/skeleton.css">
   <link rel="stylesheet" href="/css/navbar.css">
-  <link rel="stylesheet" href="/css/test.css">
+  <link rel="stylesheet" href="/css/tic-tac-toe.css">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
 
 </head>
 <body>
   <!-- Navigation -->
   <div id="navbar" class="nav">
     <div class="navContainer">
-      <img class="logo" src="images/favicon.png">
+      <img class="logo" src="/images/favicon.png">
       <ul id="navUl">
         <li><a href="/index.html">Etusivu</a></li>
         <li><a href="/tutorials.html">Tutorials</a></li>
@@ -36,26 +36,24 @@
       </ul>
     </div>
   </div>
-  <a id="menuBrgr" href="#"><img src="images/menuBrgr.svg" width="32px"></a>
+  <a id="menuBrgr" href="#"><img src="/images/menuBrgr.svg" width="32px"></a>
 
-
+  
   <!-- Primary Page Layout -->
   <div id="container" class="container" style="margin-top: 75px;">
-    
-    <div id="peopleModule">
-      <h1>People</h1>
-      <input placeholder="name" type="text">
-      <button id="addPerson">Add Person</button>
-      <ul id="people">
+    <br>
+    <div class="grid-container">
 
-      </ul>
     </div>
-
+    <div class="announce">
+      <p class="msg"></p>
+      <button class="button-primary" onclick="location.reload()">Play Again?</button>
+    </div>
   </div>
 
 
   <!-- End of document -->
-  <script src="/javascript/navbar.js"></script> 
-  <script src="/javascript/test.js"></script> 
+  <script src="/javascript/navbar.js"></script>
+  <script src="/javascript/tic-tac-toe.js"></script>
 </body>
 </html>

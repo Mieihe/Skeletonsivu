@@ -13,10 +13,14 @@ function book(title, author, pages, read) {
 
 
 //Add books to page, with remove and edit buttons
-let gameOfThrones = new book("A Game of Thrones", "By George R. R. Martin", "694", "Not read");
-let theHobbit = new book("The Hobbit, or There and Back Again", "J.R.R. Tolkien", "295", "Not read");
-let harryPotter = new book("Harry Potter and the Philosopher's Stone", "J. K. Rowling", "223", "Read");
-myLibrary.push(gameOfThrones, theHobbit, harryPotter);
+if(!localStorage.getItem('library')) {
+  let gameOfThrones = new book("A Game of Thrones", "By George R. R. Martin", "694", "Not read");
+  let theHobbit = new book("The Hobbit, or There and Back Again", "J.R.R. Tolkien", "295", "Not read");
+  let harryPotter = new book("Harry Potter and the Philosopher's Stone", "J. K. Rowling", "223", "Read");
+  myLibrary.push(gameOfThrones, theHobbit, harryPotter);
+} else {
+  myLibrary = JSON.parse(localStorage.getItem('library'));
+}
 
 let main = document.querySelector("#main");
 
@@ -34,8 +38,10 @@ function addToBookShelf() {
   document.querySelector(".closeBtn").addEventListener("click", (e) => {
     e.currentTarget.parentNode.remove();
     delete myLibrary[e.currentTarget.parentNode.dataset.id];
+    populateStorage();
   })
 
+//read notread button
   document.querySelector(".markBtn").addEventListener("click", (e) => {
     if (e.target.textContent == "Mark as unread") {
       e.target.textContent = "Mark as read";
@@ -43,6 +49,7 @@ function addToBookShelf() {
       e.target.parentNode.classList.toggle("Not");
       e.target.parentNode.classList.toggle("read");
       myLibrary[e.target.parentNode.parentNode.parentNode.dataset.id].read = "Not read";
+      populateStorage();
       e.target.previousSibling.textContent = "Not read";
 
     } else {
@@ -51,14 +58,16 @@ function addToBookShelf() {
       e.target.parentNode.classList.toggle("Not");
       e.target.parentNode.classList.toggle("read");
       myLibrary[e.target.parentNode.parentNode.parentNode.dataset.id].read = "Read";
+      populateStorage();
       e.target.previousSibling.textContent = "Read";
     }
-
   })
 }
 
 for (i=0; i<myLibrary.length; i++) {
-  addToBookShelf();
+  if (myLibrary[i] !== null) {
+    addToBookShelf();
+  }
 }
 
 
@@ -68,9 +77,17 @@ function addBookToLibrary() {
   let newTitle = document.getElementById("title").value;
   let newAuthor = document.getElementById("author").value;
   let newPages = document.getElementById("pages").value;
-  let newRead = document.querySelector('input[name=read]:checked').value ? "Read" : "Not read";
+  let newRead;
+  if (document.querySelector('input[name=read]:checked').value == true) {
+    newRead = "Read"
+  } else {
+    newRead = "Not read"
+  };
+  console.log(document.querySelector('input[name=read]:checked').value);
+  console.log(newRead);
   let newBook = new book(newTitle, newAuthor, newPages, newRead);
   myLibrary.push(newBook);
+  populateStorage();
 }
 
 document.getElementById("addBook").addEventListener("click", (e) => {
@@ -100,29 +117,9 @@ for (j=0; j<accordion.length; j++) {
 
 
 
-//localStorage setup
-
-
-// function populateStorage() {
-//   localStorage.setItem('library', myLibrary);
-
-//   setBooks();
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// localStorage setup
+function populateStorage() {
+  localStorage.setItem('library', JSON.stringify(myLibrary));
+  
+};
 

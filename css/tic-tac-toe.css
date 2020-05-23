@@ -1,0 +1,58 @@
+.item1 { grid-area: item1; }
+.item2 { grid-area: item2; }
+.item3 { grid-area: item3; }
+.item4 { grid-area: item4; }
+.item5 { grid-area: item5; }
+.item6 { grid-area: item6; }
+.item7 { grid-area: item7; }
+.item8 { grid-area: item8; }
+.item9 { grid-area: item9; }
+
+.grid-container {
+  max-width: 270px;
+  display: grid;
+  margin: auto;
+  grid-template-areas:
+    'item1 item2 item3'
+    'item4 item5 item6'
+    'item7 item8 item9';
+  grid-gap: 6px;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0px;
+
+}
+
+.grid-container > div {
+  background-color: cornsilk;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 30px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  border-radius: 4px;
+  font-size: 36px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.65);
+  min-height: 59px;
+  min-width: 88px;
+}
+
+.grid-container > div:active {
+  box-shadow: none;
+}
+
+.announce {
+  position: absolute;
+  width:300px;
+  left: 50%;
+  margin-left: -146px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 60px;
+  top: -110px;
+  padding: 200px 0 200px 0;
+  background-color: rgba(255, 255, 255, 0.65);
+  line-height: 60px;
+  visibility: hidden;
+  transition:visibility 1000ms;
+}
+
